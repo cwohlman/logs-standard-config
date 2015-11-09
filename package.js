@@ -14,10 +14,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   
-  api.addFiles('logs-to-console.js');
-  api.addFiles('logs-standard-config.js');
+  api.addFiles('logs-to-console.js', 'server');
+  api.addFiles('logs-standard-config.js', 'server');
 
-  api.export(['Logs', 'LogsConfig']);
+  api.export(['Logs', 'LogsConfig'], 'server');
 });
 
 Package.onTest(function(api) {
@@ -28,5 +28,5 @@ Package.onTest(function(api) {
   api.use('useful:logs');
   api.use('useful:logs-standard-config');
 
-  api.addFiles('logs-standard-config-tests.js');
+  api.addFiles('logs-standard-config-tests.js', 'server');
 });
